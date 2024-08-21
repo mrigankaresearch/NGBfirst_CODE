@@ -7,14 +7,14 @@ def function_OPT(Vi,NBList,MP):
   tmp=[]
   opt_val=0
 
-  model = LpProblem("impl4-problem",LpMinimize)
+  model = LpProblem("impl4-problem",LpMaximize)
   THIS_s=[]
   for N_val in range(len(NBList)):
     THIS_s.append(NBList[N_val])
 
   mi=np.min(THIS_s)
   ma=np.max(THIS_s)
-  # Initialize the decision variables
+    # Initialize the decision variables
   cpx=LpVariable(name="cpx", lowBound=MP-0.3*MP)
   diff=ma-mi
   model+=cpx>=MP-0.3*MP
