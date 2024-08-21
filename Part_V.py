@@ -1,4 +1,4 @@
-#@title incircle Laplace TVCG proposed model _ ALL_NGB_using OPTIMIZATION(July2024)
+#@title incircle proposed model _ ALL_NGB_
 ########################### LAPLACEIAN ######################
 
 Central_incenter=[]
@@ -80,7 +80,7 @@ for no_of_iter in range(4):
 
     #print(Arr_Path_length)
 
-    ####################################### Formula for Smoothing The Edges (Laplacian )#######################
+    ####################################### Formula for Smoothing The Edges #######################
     if(n>2):
       edgea=edgeb=edgec=0
 
@@ -104,7 +104,7 @@ for no_of_iter in range(4):
       New_Cords_y = curr_y+ Set_Lambda * (sum_y / len(uniq_list))
       New_Cords_z = curr_z + Set_Lambda * (sum_z / len(uniq_list))
 
-      ########################### Proposed IETE Model Begin ###########################################
+      ######################################################################
       Total_Ngb_of_current_Point=Adjacency_List[all_points][0]
       curr_point=all_points
       #print('curr_point',curr_point)
@@ -213,7 +213,7 @@ for no_of_iter in range(4):
       longest_mid_point_y=(longest_pt_1[1]+longest_pt_2[1])/2
       longest_mid_point_z=(longest_pt_1[2]+longest_pt_2[2])/2
       Longest.append([longest,longest_mid_point_x,longest_mid_point_y,longest_mid_point_z])
-      ########################### Proposed IETE Model Ends ###########################################
+      ######################################################################
 
       DIRECTION= [longest_mid_point_x-curr_i_x,longest_mid_point_y-curr_i_y,longest_mid_point_z-curr_i_z]
       MAG=pow(pow(DIRECTION[0],2)+pow(DIRECTION[1],2)+pow(DIRECTION[2],2),0.5)
@@ -224,11 +224,7 @@ for no_of_iter in range(4):
 
       Central_incenter.append([IC_x,IC_y,IC_z])
 
-      ######################   Candidate incenters######################################
-
-
-
-
+     
       ###################### UPDATE NEIGHBORS #######################
       uniq_list_ngb_2=[]
       for _ngb in uniq_list:
