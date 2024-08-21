@@ -55,7 +55,7 @@ def optimizedCenter(Vi,ALLNeighbors,MP):
   return [optimized_x,optimized_y,optimized_z]
 
 
-#@title TVC Github Upload _ ALL_NGB_using OPTIMIZATION(August2024)
+#@title Github Upload _ ALL_NGB_using OPTIMIZATION
 ########################### MAIN ALGORITHM ######################
 
 Central_incenter=[]
@@ -141,7 +141,7 @@ for no_of_iter in range(4):
 
     #print(Arr_Path_length)
 
-    ####################################### Formula for Smoothing The Edges (Laplacian )#######################
+    ####################################### Formula for Smoothing The Edges #######################
     if(n>2):
       edgea=edgeb=edgec=0
 
@@ -165,7 +165,7 @@ for no_of_iter in range(4):
       New_Cords_y = curr_y+ Set_Lambda * (sum_y / len(uniq_list))
       New_Cords_z = curr_z + Set_Lambda * (sum_z / len(uniq_list))
 
-      ########################### Proposed IETE Model Begin ###########################################
+      ########################## ###########################################
       Total_Ngb_of_current_Point=Adjacency_List[all_points][0]
       curr_point=all_points
       #print('curr_point',curr_point)
