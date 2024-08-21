@@ -7,20 +7,18 @@ def function_OPT_NOSPEEDUP(Vi,NBList,MP):
   tmp=[]
   opt_val=0
 
-  model = LpProblem("impl4-problem",LpMinimize)
+  model = LpProblem("impl4-problem",LpMaximize)
   THIS_s=[]
   for N_val in range(len(NBList)):
     THIS_s.append(NBList[N_val])
 
   mi=np.min(THIS_s)
   ma=np.max(THIS_s)
-    # Initialize the decision variables
-  cpx=LpVariable(name="cpx", lowBound=mi)
+  # Initialize the decision variables
+  cpx=LpVariable(name="cpx", lowBound=MP-0.3*MP)
   diff=ma-mi
-  for N_val in range(len(NBList)):
-    model+=cpx>=NBList[N_val]-0.5*NBList[N_val]
-    model+=cpx<=NBList[N_val]+0.5*NBList[N_val]
-
+  model += cpx>=MP-0.3*MP
+  model += cpx<=MP
   for N_val in range(len(NBList)):
     model += cpx-NBList[N_val]-0.5*(diff/2)  # Solve the problem for one face at a time
 
