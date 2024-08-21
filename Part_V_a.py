@@ -14,11 +14,12 @@ def function_OPT(Vi,NBList,MP):
 
   mi=np.min(THIS_s)
   ma=np.max(THIS_s)
-    # Initialize the decision variables
-  cpx=LpVariable(name="cpx", lowBound=mi)
+  # Initialize the decision variables
+  cpx=LpVariable(name="cpx", lowBound=MP-0.3*MP)
   diff=ma-mi
-
-  model += cpx-0.5*(MP)  # Solve the problem for one face at a time
+  model+=cpx>=MP-0.3*MP
+  model+=cpx<=MP
+  model += cpx-MP  # Solve the problem for one face at a time
 
     
   status = model.solve()
