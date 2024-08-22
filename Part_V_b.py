@@ -50,9 +50,9 @@ def optimizedCenter(Vi,ALLNeighbors,MP):
     P_x.append(ALLNeighbors[i][0])
     P_y.append(ALLNeighbors[i][1])
     P_z.append(ALLNeighbors[i][2])
-  optimized_x=function_OPT(Vix,P_x,MP[0])
-  optimized_y=function_OPT(Viy,P_y,MP[1])
-  optimized_z=function_OPT(Viz,P_z,MP[2])
+  optimized_x=function_OPT_NOSPEEDUP(Vix,P_x,MP[0])
+  optimized_y=function_OPT_NOSPEEDUP(Viy,P_y,MP[1])
+  optimized_z=function_OPT_NOSPEEDUP(Viz,P_z,MP[2])
   #input()
   return [optimized_x,optimized_y,optimized_z]
 
