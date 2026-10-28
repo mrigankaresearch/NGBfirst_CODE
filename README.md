@@ -1,5 +1,5 @@
 # NGBfirst_CODE
-This is upload for submission to The Visual Computer
+This is upload for readers
 
 This is a python colab notebook code for executing the generic version of the algorithm. <br/>
 Step 1: Run Part_I.py <br />
